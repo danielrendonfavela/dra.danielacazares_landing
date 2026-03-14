@@ -107,24 +107,33 @@
         <div class="success-container">
             <i class="fas fa-check-circle success-icon"></i>
             <h1 class="success-title">¡Pago Exitoso!</h1>
-            <p class="success-text">
-                Gracias por adquirir el <strong>Manual Clínico de Estratificación Bee Natural</strong>. Tu pago ha sido
-                procesado correctamente.
-                <br><br>
-                Hemos enviado un correo electrónico con el enlace de acceso a tu manual. Por favor, revisa tu bandeja de
-                entrada (y tu carpeta de Spam).
+            <div id="loading-spinner" style="margin: 2rem 0;">
+                <i class="fas fa-circle-notch fa-spin fa-3x" style="color: var(--primary);"></i>
+                <p style="margin-top: 1rem; color: var(--text-light);">Autenticando tu pago con Stripe de forma
+                    segura...</p>
+            </div>
+
+            <p id="status-text" class="success-text">
+                Construyendo tu enlace privado...
             </p>
+
+            <a href="#" id="secure-download-btn" class="download-btn" style="display: none;">
+                <i class="fas fa-lock"></i> Descarga Segura PDF
+            </a>
 
             <a href="index.html" class="back-link" style="margin-top: 2rem;">
                 <i class="fas fa-arrow-left"></i> Volver a la página principal
             </a>
 
             <div class="security-note">
-                <i class="fas fa-lock"></i>
-                <p>Envío seguro por correo electrónico.</p>
+                <i class="fas fa-shield-alt"></i>
+                <p>Enlace encriptado y efímero validado por Stripe.</p>
             </div>
         </div>
     </section>
+
+    <!-- Script de validación Frontend-Backend -->
+    <script src="exito-manual.js"></script>
 
 </body>
 
