@@ -898,152 +898,152 @@ ul {
     transform: rotate(-15deg);
 }
 
-.courses-grid {
+/* === Academy Section === */
+.academy {
+    padding: var(--section-padding);
+    background: var(--off-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.products-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
 }
 
-.courses-text {
-    font-size: 1.05rem;
-    color: var(--text-light);
-    margin-bottom: 32px;
-    line-height: 1.8;
-}
-
-.course-features {
+.product-card {
+    position: relative;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin-bottom: 36px;
 }
 
-.course-feature {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-}
-
-.course-feature i {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-md);
-    background: var(--white);
-    color: var(--gold);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    box-shadow: var(--shadow-sm);
-}
-
-.course-feature h4 {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--gray-700);
-    margin-bottom: 4px;
-}
-
-.course-feature p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-.courses-card {
-    position: relative;
-}
-
-.course-card-accent {
+.product-card-accent {
     position: absolute;
     inset: -4px;
     border-radius: calc(var(--radius-xl) + 4px);
-    background: var(--gradient-gold);
+    background: var(--gradient-pastel);
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.6;
+    transition: var(--transition-base);
 }
 
-.course-card-content {
+.product-card:hover .product-card-accent {
+    opacity: 1;
+    background: var(--gradient-gold);
+}
+
+.product-content {
     position: relative;
     z-index: 1;
     background: var(--white);
     border-radius: var(--radius-xl);
-    padding: 40px;
+    padding: 36px 32px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transition-base);
+}
+
+.product-card:hover .product-content {
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
-.course-card-badge {
+.product-badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: var(--pastel-peach);
-    color: var(--gold-dark);
+    padding: 6px 14px;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    align-self: flex-start;
 }
 
-.course-card-title {
+.badge-new {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.badge-hot {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.badge-limited {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+.product-title {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--gray-700);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    line-height: 1.3;
 }
 
-.course-card-subtitle {
-    font-size: 1rem;
+.product-subtitle {
+    font-size: 0.95rem;
     color: var(--text-light);
     margin-bottom: 24px;
+    min-height: 44px;
 }
 
-.course-card-details {
+.product-features {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
+    flex-grow: 1;
 }
 
-.course-card-details li {
+.product-features li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--gray-600);
+    line-height: 1.5;
 }
 
-.course-card-details li i {
+.product-features li i {
     color: var(--gold);
-    width: 20px;
-    text-align: center;
+    margin-top: 3px;
+    font-size: 0.85rem;
 }
 
-.course-card-price {
+.product-price {
     display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 20px 0;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px 0 0;
     border-top: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
     margin-bottom: 24px;
 }
 
-.course-price-label {
-    font-size: 0.85rem;
+.product-price span {
+    font-size: 0.8rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.course-price-value {
+.product-price strong {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--gold);
+    color: var(--gray-700);
+}
+
+.stripe-link i {
+    margin-right: 8px;
 }
 
 /* === Testimonials Section === */
@@ -1704,6 +1704,13 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    /* Academy Mobile */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
     /* Testimonials Mobile */
     .testimonial-card {
         padding: 32px 24px;
@@ -1765,7 +1772,7 @@ ul {
         flex-direction: column;
     }
 
-    .course-card-content {
+    .product-content {
         padding: 28px 20px;
     }
 }
